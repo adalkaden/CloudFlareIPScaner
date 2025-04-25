@@ -1,52 +1,50 @@
 # CloudFlare IP Scanner
 
-CloudFlare IP Scanner - это программа для сканирования IP-адресов ASN. Программа позволяет находить CloudFlare IP CDN а также определяет местоположение и измеряет задержку (latency) валидных IP-адресов.
+CloudFlare IP Scanner is a program for scanning ASN IP addresses. The program allows you to find CloudFlare IP CDN and also determines the location and measures the latency of valid IP addresses.
 
 ![GUI](/img.png)
 
-## Возможности
+## Possibilities
+- Scan IP addresses by ASN numbers
+- TLS support
+- Parallel query processing
+- Saving results to a CSV file
 
-- Сканирование IP-адресов по номерам ASN
-- Поддержка TLS
-- Параллельная обработка запросов
-- Сохранение результатов в CSV-файл
+## Installation
 
-## Установка
-
-1. Установите Go и настройте GOPATH.
-2. Скачайте исходный код.
-
+1. Install Go and set GOPATH.
+2. Download the source code.
    ```sh
     git clone https://github.com/nxhack/CloudFlareIPScanner.git
     cd CloudFlareIPScanner
    ```
 
-## Сборка
+## Assembly
 
-Для компиляции программы выполните следующую команду:
+To compile the program, run the following command:
 
     go build -o CloudFlareIPScanner main.go
 
-Это создаст исполняемый файл `CloudFlareIPScanner` в текущем каталоге.
+This will create an executable file CloudFlareIPScannerin the current directory.
 
-## Использование
+## Usage
 
-### Запуск через командную строку
+### Launch via command line
 
-Запустите программу с необходимыми аргументами:
+Run the program with the required arguments:
 
-    ./CloudFlareIPScanner -asn <ASN номера> -port <порт> -max <максимальное количество потоков> -tls <true/false>
+    ./CloudFlareIPScanner -asn <ASN > -port <порт> -max <мак> -tls <true/false>
 
-Пример:
+Example:
 
     ./CloudFlareIPScanner -asn "AS13335,AS15169" -port 443 -max 50 -tls true
 
-### Аргументы командной строки
+### Command line arguments
 
-- `-asn`: Номера ASN, разделенные запятыми (обязательно).
-- `-port`: Порт для сканирования (по умолчанию 443).
-- `-max`: Максимальное количество параллельных запросов (по умолчанию 50), зависит от скорости интернета.
-- `-tls`: Включить TLS (по умолчанию true).
+- asn: ASN numbers separated by commas (required).
+- port: Port to scan (default 443).
+- max: Maximum number of parallel requests (default 50), depends on internet speed.
+- tls: Enable TLS (default true).
 
-#### Контакты
+#### Contacts
 Telegram https://t.me/bitcraken
